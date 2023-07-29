@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel-layout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <h1>Carousel-Image -Gallery</h1>
+    <div class="container">
+      
+        <div class="box">
+            <div class="image-container">
+                <div class="image-box">
+                    <img src="apostolos-vamvouras-YQbJLyY0hFU-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="felipepelaquim-6zO5VKogoZE-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="kris-gerhard-0BKZfcamvGg-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="maksim-larin-NOpsC3nWTzY-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="wengang-zhai-_fOL6ebfECQ-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="kris-gerhard-0BKZfcamvGg-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="apostolos-vamvouras-YQbJLyY0hFU-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="kris-gerhard-0BKZfcamvGg-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="maksim-larin-NOpsC3nWTzY-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="kris-gerhard-0BKZfcamvGg-unsplash.jpg" alt="1"/>
+                </div>
+                <div class="image-box">
+                    <img src="maksim-larin-NOpsC3nWTzY-unsplash.jpg" alt="1"/>
+                </div>
+            </div>
+            <div class="left">
+                <button id="left"><i class="fa-solid fa-arrow-left-long"></i></buttton>
+            </div>
+            <div class="right">
+                <button id="right"><i class="fa-solid fa-arrow-right-long"></i></buttton>
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+        var left_button = document.getElementById('left');
+        var right_button = document.getElementById('right');
+        var image_container = document.querySelector('.image-container');
+        var Current_left = 0;
+        var step = 300;
+        var min_left = -2200;
+        max_left = 90;
+        left_button.addEventListener('click', () => {
+            Current_left -= step;
+            if(Current_left < min_left){
+                Current_left = min_left
+            }
+            console.log('left', Current_left);
+            image_container.style.left = `${Current_left}px`;
+
+        })
+
+        right_button.addEventListener('click', () => {
+            Current_left += step;
+            if(Current_left > max_left){
+                Current_left = max_left
+            }
+            console.log('right', Current_left);
+            image_container.style.left = `${Current_left}px`;
+        })
+
+    </script>
+</body>
+
+</html>
